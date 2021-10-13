@@ -6,9 +6,9 @@ public class Calculator {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         System.out.print("Enter num1:");
-        double operand1 = in.nextDouble();
+        int operand1 = in.nextInt();
         System.out.print("Enter num2:");
-        double operand2 = in.nextDouble();
+        int operand2 = in.nextInt();
         System.out.print("Enter oper(+,-,*,/):");
         String sign = in.next();
         switch (sign){
