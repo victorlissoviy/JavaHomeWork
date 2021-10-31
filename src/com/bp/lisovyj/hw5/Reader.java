@@ -12,6 +12,42 @@ public class Reader {
     private final String dateBirth;
     private String telephone;
 
+    public String getName() {
+        return name;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public int getNumber() {
+        return number;
+    }
+
+    public String getFaculty() {
+        return faculty;
+    }
+
+    public void setFaculty(String faculty) {
+        this.faculty = faculty;
+    }
+
+    public String getDateBirth() {
+        return dateBirth;
+    }
+
+    public String getTelephone() {
+        return telephone;
+    }
+
+    public void setTelephone(String telephone) {
+        this.telephone = telephone;
+    }
+
     public String getFIO(){
         return lastName + " " + name.charAt(0) + ". " + surname.charAt(0) + ".";
     }
