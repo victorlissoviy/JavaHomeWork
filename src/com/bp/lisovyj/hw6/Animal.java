@@ -1,5 +1,7 @@
 package com.bp.lisovyj.hw6;
 
+import java.util.Objects;
+
 public class Animal {
     protected String food;
     protected String location;
@@ -53,6 +55,11 @@ public class Animal {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, food, location);
     }
 
     @Override

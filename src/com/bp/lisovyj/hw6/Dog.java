@@ -1,5 +1,7 @@
 package com.bp.lisovyj.hw6;
 
+import java.util.Objects;
+
 public class Dog extends Animal{
     private String favoriteToy;
 
@@ -26,7 +28,7 @@ public class Dog extends Animal{
 
     @Override
     public int hashCode() {
-        return super.hashCode();
+        return Objects.hash(name, food, location, favoriteToy);
     }
 
     @Override
