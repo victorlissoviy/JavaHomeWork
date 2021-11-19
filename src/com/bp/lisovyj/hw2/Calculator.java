@@ -33,5 +33,6 @@ public class Calculator {
                 break;
             }
         }
+        in.close();
     }
 }

@@ -18,5 +18,6 @@ public class Interval {
         }else{
             System.out.println("Number not in 0-100");
         }
+        in.close();
     }
 }
