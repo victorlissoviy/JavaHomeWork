@@ -140,21 +140,15 @@ public class PhoneBook {
     }
 
     public void sortByName(){
-        Stream.of(list.toArray())
-                .sorted(Comparator.comparing(c -> ((Contact)c).name))
-                .forEach(System.out::println);
-//        List<Contact> mas = new ArrayList<>(list);
-//        mas.sort(Comparator.comparing(c -> c.name));
-//        mas.forEach(c -> System.out.println(c.toString()));
+        list.stream()
+            .sorted(Comparator.comparing(c -> ((Contact)c).name))
+            .forEach(System.out::println);
     }
 
     public void sortByAge(){
-        Stream.of(list.toArray())
-                .sorted(Comparator.comparing(c -> ((Contact)c).name))
-                .forEach(System.out::println);
-//        List<Contact> mas = new ArrayList<>(list);
-//        mas.sort(Comparator.comparing(c -> c.dateOfBirth));
-//        mas.forEach(c -> System.out.println(c.toString()));
+        list.stream()
+            .sorted(Comparator.comparing(c -> ((Contact)c).name))
+            .forEach(System.out::println);
     }
 
     public void changeContact(int index, Contact contact){
@@ -227,7 +221,7 @@ public class PhoneBook {
         pb.changeContact(2, new Contact("Дима", LocalDate.of(2001,1,24),new TreeSet<>(Arrays.asList("3801234567")), "mymyAdres", LocalDateTime.now()));
         PhoneBook.toJson("files/PB2.json", pb);
 
-        Stream.of(Objects.requireNonNull(PhoneBook.fromJson("files/PB2.json")).getList().toArray())
+        Objects.requireNonNull(PhoneBook.fromJson("files/PB2.json")).getList()
                 .forEach(System.out::println);
     }
 }
