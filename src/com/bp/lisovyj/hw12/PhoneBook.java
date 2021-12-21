@@ -141,13 +141,13 @@ public class PhoneBook {
 
     public void sortByName(){
         list.stream()
-            .sorted(Comparator.comparing(c -> ((Contact)c).name))
+            .sorted(Comparator.comparing(c -> c.name))
             .forEach(System.out::println);
     }
 
     public void sortByAge(){
         list.stream()
-            .sorted(Comparator.comparing(c -> ((Contact)c).name))
+            .sorted(Comparator.comparing(c -> c.name))
             .forEach(System.out::println);
     }
 
