@@ -130,8 +130,7 @@ public class PhoneBook {
     }
 
     public int find(String name){
-        int i;
-        for(i = 0; i < list.size(); i++){
+        for(int i = 0; i < list.size(); i++){
             if(name.equals(list.get(i).name)){
                 return i;
             }
