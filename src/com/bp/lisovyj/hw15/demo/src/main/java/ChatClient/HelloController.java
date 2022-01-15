@@ -28,6 +28,17 @@ public class HelloController {
     private void sendMessage(){
         String str = textLine.getText();
         pw.println(str);
+        if(str.equals("exit")){
+            pw.close();
+            try {
+                br.close();
+                socket.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            connect = false;
+            textArea.appendText("З'єднання закрито\n");
+        }
         textLine.clear();
     }
 
@@ -37,8 +48,7 @@ public class HelloController {
             while((str = br.readLine()) != null){
                 textArea.appendText(str + "\n");
             }
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (IOException ignored) {
         }
     }
 
@@ -94,7 +104,9 @@ public class HelloController {
         }catch (IOException e){
             e.printStackTrace();
         }
-        connect = true;
-        textArea.appendText("З'єднання відбулось\n");
+        if(socket.isConnected()){
+            connect = true;
+            textArea.appendText("З'єднання відкрито\n");
+        }
     }
 }
